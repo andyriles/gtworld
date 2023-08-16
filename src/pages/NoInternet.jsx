@@ -29,7 +29,6 @@ const NoInternetConnection = (props) => {
           top: "50%",
           left: "50%",
           transform: "translate(-50%, -50%)",
-          backgroundColor: "#2361cc",
         }}
       >
         <p>Oops! You&apos;re not currently connected to the internet</p>;

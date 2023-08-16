@@ -31,7 +31,7 @@ const NoInternetConnection = (props) => {
           transform: "translate(-50%, -50%)",
         }}
       >
-        <p>Oops! You&apos;re not currently connected to the internet</p>;
+        <p>Oops! You&apos;re not currently connected to the internet</p>
       </div>
     );
   }

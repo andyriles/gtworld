@@ -23,7 +23,15 @@ const NoInternetConnection = (props) => {
     return props.children;
   } else {
     return (
-      <div className="flex items-center justify-center">
+      <div
+        style={{
+          position: "absolute",
+          top: "50%",
+          left: "50%",
+          transform: "translate(-50%, -50%)",
+          backgroundColor: "#2361cc",
+        }}
+      >
         <p>Oops! You&apos;re not currently connected to the internet</p>;
       </div>
     );

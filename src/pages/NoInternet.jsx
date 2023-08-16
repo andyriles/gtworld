@@ -22,7 +22,11 @@ const NoInternetConnection = (props) => {
   if (isOnline) {
     return props.children;
   } else {
-    return <h1>No Interner Connection. Please try again later.</h1>;
+    return (
+      <div className="flex items-center justify-center">
+        <p>Oops! You&apos;re not currently connected to the internet</p>;
+      </div>
+    );
   }
 };
 

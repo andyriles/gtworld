@@ -3,6 +3,7 @@ import "./App.css";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./pages/Home/Home";
+import NoInternetConnection from "./pages/NoInternet";
 import ChequeDeposit from "./pages/ChequeDeposit/ChequeDeposit";
 import ConfirmDetails from "./pages/ConfirmDetails/ConfirmDetails";
 
@@ -28,7 +29,9 @@ const router = createBrowserRouter([
 export default function App() {
   return (
     <div>
-      <RouterProvider router={router} />
+      <NoInternetConnection>
+        <RouterProvider router={router} />
+      </NoInternetConnection>
     </div>
   );
 }

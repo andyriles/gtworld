@@ -6,12 +6,13 @@ import { VitePWA } from "vite-plugin-pwa";
 
 const manifestForPlugin = {
   registerType: "prompt",
-  includeAssets: [
-    "favicon.ico",
-    "apple-touch-icon.png",
-    "masked-icon.svg",
-    "gtb_logo.png",
-  ],
+  // add this to cache all the imports
+  workbox: {
+    globPatterns: ["**/*"],
+  },
+  // add this to cache all the
+  // static assets in the public folder
+  includeAssets: ["**/*"],
   manifest: {
     name: "GTWorld",
     shortName: "GTWorld",

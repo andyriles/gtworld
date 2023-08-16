@@ -43,7 +43,7 @@ const Login = () => {
       <p className="text-lg">Enter password</p>
       <div className="flex mt-4 gap-x-4">{renderCircles()}</div>
       <Keypad handleClick={handleClick} handleDelete={handleDelete} />
-      <p style={{ color: "#ff6b3c" }} className="text-sm text-bold">
+      <p style={{ color: "#ff6b3c" }} className="text-sm text-bold mt-8">
         Forgot Password?
       </p>
     </div>

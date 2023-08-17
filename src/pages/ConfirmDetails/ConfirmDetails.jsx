@@ -12,8 +12,7 @@ const ConfirmDetails = () => {
   const [clicked, setClicked] = useState(false);
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(false);
-  console.log({ loading });
-  console.log({ data });
+
   const handleNavigate = () => {
     navigate("/deposit-cheque");
   };
@@ -42,6 +41,7 @@ const ConfirmDetails = () => {
     e.preventDefault();
     setLoading(true);
     setClicked(true);
+    console.log(state);
     const formData = new FormData();
     formData.append("front_image", state[3]);
     formData.append("back_image", state[4]);
@@ -71,7 +71,7 @@ const ConfirmDetails = () => {
   return (
     <div className="m-4">
       <div
-        onClick={handleNavigate}
+        onClick={handleNavigateWithState}
         className="fixed top-0 left-4 right-0 z-20 h-16 pt-8"
         style={{ backgroundColor: "#f1f2f5" }}
       >

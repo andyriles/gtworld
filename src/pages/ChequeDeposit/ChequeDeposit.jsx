@@ -22,6 +22,8 @@ const ChequeDeposit = () => {
       setSelectedImage(state[0]);
       setSecondSelectedImage(state[1]);
       setSelectedAccount(state[2]);
+      setFile1(state[3]);
+      setFile2(state[4]);
     }
   }, []);
 
@@ -157,7 +159,7 @@ const ChequeDeposit = () => {
           <input
             required={true}
             type="file"
-            accept="image/*"
+            accept=".jpg, .jpeg, .png"
             ref={(ref) => (secondInputRef.current = ref)}
             style={{ display: "none" }}
             onChange={handleSecondImageUpload}

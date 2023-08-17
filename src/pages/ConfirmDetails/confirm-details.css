@@ -1,6 +1,7 @@
 .modal-bottom :where(.modal-box) {
-  margin-bottom: 1.8em;
+  margin-bottom: 1.5em;
   width: 90% !important;
   margin-right: 1em !important;
   padding: 0 !important;
+  border-radius: 20px !important;
 }

@@ -9,6 +9,7 @@ const selectOptions = [{ value: "0817455948", label: "Current- 0817455948" }];
 
 const ChequeDeposit = () => {
   const { state } = useLocation();
+  const [error, setError] = useState(null);
   const [file1, setFile1] = useState(null);
   const [file2, setFile2] = useState(null);
   const [selectedImage, setSelectedImage] = useState(null);
@@ -65,18 +66,36 @@ const ChequeDeposit = () => {
           file2,
         ],
       });
+    } else {
+      setError(
+        "Form not complete, kindly update the required fields to proceed"
+      );
+      setTimeout(() => {
+        setError(null);
+      }, 3000);
     }
   };
   return (
     <div className="m-4">
-      <div
-        onClick={handleNavigate}
-        className="fixed top-0 left-4 right-0 z-20 h-16 pt-8"
-        style={{ backgroundColor: "#f1f2f5" }}
-      >
-        <img src={BackIcon} alt="backIcon" />
-      </div>
-      <h1 className="text-3xl text-extrabold mt-16">Cheque Deposit</h1>
+      {error ? (
+        <div
+          className="alert  fixed top-0 left-0 z-20 fixed text-start"
+          style={{ backgroundColor: "#FB5621", borderRadius: "0px" }}
+        >
+          <span className="text-white ">{error}</span>
+        </div>
+      ) : (
+        <div
+          onClick={handleNavigate}
+          className="fixed top-0 left-4 right-0 z-20 h-16 pt-8"
+          style={{ backgroundColor: "#f1f2f5" }}
+        >
+          <img src={BackIcon} alt="backIcon" />
+        </div>
+      )}
+      <h1 className={`text-3xl text-extrabold ${error ? "mt-16" : "mt-20"}`}>
+        Cheque Deposit
+      </h1>
       <p className="mt-4">
         Provide the required details to process your cheque deposit
       </p>
@@ -100,7 +119,7 @@ const ChequeDeposit = () => {
           }
           isSearchable={false}
         />
-        <p className="my-4">Upload image of cheque </p>
+        <p className="my-4">Upload clear image of cheque </p>
         <div
           onClick={() => inputRef.current.click()}
           className="mt-2  border border-neutral-500 rounded-md"
